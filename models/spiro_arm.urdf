@@ -1,0 +1,402 @@
+<?xml version="1.0" ?>
+<robot name="spiro_arm">
+
+  <link name="base">
+    <inertial><origin xyz="0 0 0"/><mass value="0"/><inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><box size="0.03 0.03 0.03"/></geometry><material name="gray"><color rgba="0.6 0.6 0.6 1"/></material></visual>
+    <collision><origin xyz="0 0 0" rpy="0 0 0"/><geometry><box size="0.03 0.03 0.03"/></geometry></collision>
+  </link>
+
+
+  <link name="link_1">
+    <inertial>
+      <origin xyz="0.0325 0 0" rpy="0 0 0"/>
+      <mass value="0.04"/>
+      <inertia ixx="2.1599999999999996e-06" ixy="0" ixz="0" iyy="1.5163333333333333e-05" iyz="0" izz="1.5163333333333333e-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0325 0 0" rpy="0 0 0"/>
+      <geometry><box size="0.065 0.018 0.018"/></geometry>
+      <material name="white"><color rgba="0.95 0.95 0.95 1"/></material>
+    </visual>
+    <collision>
+      <origin xyz="0.0325 0 0" rpy="0 0 0"/>
+      <geometry><box size="0.065 0.018 0.018"/></geometry>
+    </collision>
+  </link>
+
+  <joint name="joint_1" type="revolute">
+    <parent link="base"/>
+    <child link="link_1"/>
+    <origin xyz="0.015 0 0" rpy="0 0 0"/>
+    <!-- BEND IN VERTICAL PLANE: rotate about Y-axis -->
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.57" upper="1.57" effort="3.0" velocity="6.0"/>
+    <dynamics damping="0.02" friction="0.0"/>
+  </joint>
+
+
+  <link name="link_2">
+    <inertial>
+      <origin xyz="0.0325 0 0" rpy="0 0 0"/>
+      <mass value="0.04"/>
+      <inertia ixx="2.1599999999999996e-06" ixy="0" ixz="0" iyy="1.5163333333333333e-05" iyz="0" izz="1.5163333333333333e-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0325 0 0" rpy="0 0 0"/>
+      <geometry><box size="0.065 0.018 0.018"/></geometry>
+      <material name="white"><color rgba="0.95 0.95 0.95 1"/></material>
+    </visual>
+    <collision>
+      <origin xyz="0.0325 0 0" rpy="0 0 0"/>
+      <geometry><box size="0.065 0.018 0.018"/></geometry>
+    </collision>
+  </link>
+
+  <joint name="joint_2" type="revolute">
+    <parent link="link_1"/>
+    <child link="link_2"/>
+    <origin xyz="0.065 0 0" rpy="0 0 0"/>
+    <!-- BEND IN VERTICAL PLANE: rotate about Y-axis -->
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.57" upper="1.57" effort="3.0" velocity="6.0"/>
+    <dynamics damping="0.02" friction="0.0"/>
+  </joint>
+
+
+  <link name="link_3">
+    <inertial>
+      <origin xyz="0.0325 0 0" rpy="0 0 0"/>
+      <mass value="0.04"/>
+      <inertia ixx="2.1599999999999996e-06" ixy="0" ixz="0" iyy="1.5163333333333333e-05" iyz="0" izz="1.5163333333333333e-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0325 0 0" rpy="0 0 0"/>
+      <geometry><box size="0.065 0.018 0.018"/></geometry>
+      <material name="white"><color rgba="0.95 0.95 0.95 1"/></material>
+    </visual>
+    <collision>
+      <origin xyz="0.0325 0 0" rpy="0 0 0"/>
+      <geometry><box size="0.065 0.018 0.018"/></geometry>
+    </collision>
+  </link>
+
+  <joint name="joint_3" type="revolute">
+    <parent link="link_2"/>
+    <child link="link_3"/>
+    <origin xyz="0.065 0 0" rpy="0 0 0"/>
+    <!-- BEND IN VERTICAL PLANE: rotate about Y-axis -->
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.57" upper="1.57" effort="3.0" velocity="6.0"/>
+    <dynamics damping="0.02" friction="0.0"/>
+  </joint>
+
+
+  <link name="link_4">
+    <inertial>
+      <origin xyz="0.0325 0 0" rpy="0 0 0"/>
+      <mass value="0.04"/>
+      <inertia ixx="2.1599999999999996e-06" ixy="0" ixz="0" iyy="1.5163333333333333e-05" iyz="0" izz="1.5163333333333333e-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0325 0 0" rpy="0 0 0"/>
+      <geometry><box size="0.065 0.018 0.018"/></geometry>
+      <material name="white"><color rgba="0.95 0.95 0.95 1"/></material>
+    </visual>
+    <collision>
+      <origin xyz="0.0325 0 0" rpy="0 0 0"/>
+      <geometry><box size="0.065 0.018 0.018"/></geometry>
+    </collision>
+  </link>
+
+  <joint name="joint_4" type="revolute">
+    <parent link="link_3"/>
+    <child link="link_4"/>
+    <origin xyz="0.065 0 0" rpy="0 0 0"/>
+    <!-- BEND IN VERTICAL PLANE: rotate about Y-axis -->
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.57" upper="1.57" effort="3.0" velocity="6.0"/>
+    <dynamics damping="0.02" friction="0.0"/>
+  </joint>
+
+
+  <link name="link_5">
+    <inertial>
+      <origin xyz="0.0325 0 0" rpy="0 0 0"/>
+      <mass value="0.04"/>
+      <inertia ixx="2.1599999999999996e-06" ixy="0" ixz="0" iyy="1.5163333333333333e-05" iyz="0" izz="1.5163333333333333e-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0325 0 0" rpy="0 0 0"/>
+      <geometry><box size="0.065 0.018 0.018"/></geometry>
+      <material name="white"><color rgba="0.95 0.95 0.95 1"/></material>
+    </visual>
+    <collision>
+      <origin xyz="0.0325 0 0" rpy="0 0 0"/>
+      <geometry><box size="0.065 0.018 0.018"/></geometry>
+    </collision>
+  </link>
+
+  <joint name="joint_5" type="revolute">
+    <parent link="link_4"/>
+    <child link="link_5"/>
+    <origin xyz="0.065 0 0" rpy="0 0 0"/>
+    <!-- BEND IN VERTICAL PLANE: rotate about Y-axis -->
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.57" upper="1.57" effort="3.0" velocity="6.0"/>
+    <dynamics damping="0.02" friction="0.0"/>
+  </joint>
+
+
+  <link name="link_6">
+    <inertial>
+      <origin xyz="0.0325 0 0" rpy="0 0 0"/>
+      <mass value="0.04"/>
+      <inertia ixx="2.1599999999999996e-06" ixy="0" ixz="0" iyy="1.5163333333333333e-05" iyz="0" izz="1.5163333333333333e-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0325 0 0" rpy="0 0 0"/>
+      <geometry><box size="0.065 0.018 0.018"/></geometry>
+      <material name="white"><color rgba="0.95 0.95 0.95 1"/></material>
+    </visual>
+    <collision>
+      <origin xyz="0.0325 0 0" rpy="0 0 0"/>
+      <geometry><box size="0.065 0.018 0.018"/></geometry>
+    </collision>
+  </link>
+
+  <joint name="joint_6" type="revolute">
+    <parent link="link_5"/>
+    <child link="link_6"/>
+    <origin xyz="0.065 0 0" rpy="0 0 0"/>
+    <!-- BEND IN VERTICAL PLANE: rotate about Y-axis -->
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.57" upper="1.57" effort="3.0" velocity="6.0"/>
+    <dynamics damping="0.02" friction="0.0"/>
+  </joint>
+
+
+  <link name="link_7">
+    <inertial>
+      <origin xyz="0.0325 0 0" rpy="0 0 0"/>
+      <mass value="0.04"/>
+      <inertia ixx="2.1599999999999996e-06" ixy="0" ixz="0" iyy="1.5163333333333333e-05" iyz="0" izz="1.5163333333333333e-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0325 0 0" rpy="0 0 0"/>
+      <geometry><box size="0.065 0.018 0.018"/></geometry>
+      <material name="white"><color rgba="0.95 0.95 0.95 1"/></material>
+    </visual>
+    <collision>
+      <origin xyz="0.0325 0 0" rpy="0 0 0"/>
+      <geometry><box size="0.065 0.018 0.018"/></geometry>
+    </collision>
+  </link>
+
+  <joint name="joint_7" type="revolute">
+    <parent link="link_6"/>
+    <child link="link_7"/>
+    <origin xyz="0.065 0 0" rpy="0 0 0"/>
+    <!-- BEND IN VERTICAL PLANE: rotate about Y-axis -->
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.57" upper="1.57" effort="3.0" velocity="6.0"/>
+    <dynamics damping="0.02" friction="0.0"/>
+  </joint>
+
+
+  <link name="link_8">
+    <inertial>
+      <origin xyz="0.0325 0 0" rpy="0 0 0"/>
+      <mass value="0.04"/>
+      <inertia ixx="2.1599999999999996e-06" ixy="0" ixz="0" iyy="1.5163333333333333e-05" iyz="0" izz="1.5163333333333333e-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0325 0 0" rpy="0 0 0"/>
+      <geometry><box size="0.065 0.018 0.018"/></geometry>
+      <material name="white"><color rgba="0.95 0.95 0.95 1"/></material>
+    </visual>
+    <collision>
+      <origin xyz="0.0325 0 0" rpy="0 0 0"/>
+      <geometry><box size="0.065 0.018 0.018"/></geometry>
+    </collision>
+  </link>
+
+  <joint name="joint_8" type="revolute">
+    <parent link="link_7"/>
+    <child link="link_8"/>
+    <origin xyz="0.065 0 0" rpy="0 0 0"/>
+    <!-- BEND IN VERTICAL PLANE: rotate about Y-axis -->
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.57" upper="1.57" effort="3.0" velocity="6.0"/>
+    <dynamics damping="0.02" friction="0.0"/>
+  </joint>
+
+
+  <link name="link_9">
+    <inertial>
+      <origin xyz="0.0325 0 0" rpy="0 0 0"/>
+      <mass value="0.04"/>
+      <inertia ixx="2.1599999999999996e-06" ixy="0" ixz="0" iyy="1.5163333333333333e-05" iyz="0" izz="1.5163333333333333e-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0325 0 0" rpy="0 0 0"/>
+      <geometry><box size="0.065 0.018 0.018"/></geometry>
+      <material name="white"><color rgba="0.95 0.95 0.95 1"/></material>
+    </visual>
+    <collision>
+      <origin xyz="0.0325 0 0" rpy="0 0 0"/>
+      <geometry><box size="0.065 0.018 0.018"/></geometry>
+    </collision>
+  </link>
+
+  <joint name="joint_9" type="revolute">
+    <parent link="link_8"/>
+    <child link="link_9"/>
+    <origin xyz="0.065 0 0" rpy="0 0 0"/>
+    <!-- BEND IN VERTICAL PLANE: rotate about Y-axis -->
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.57" upper="1.57" effort="3.0" velocity="6.0"/>
+    <dynamics damping="0.02" friction="0.0"/>
+  </joint>
+
+
+  <link name="link_10">
+    <inertial>
+      <origin xyz="0.0325 0 0" rpy="0 0 0"/>
+      <mass value="0.04"/>
+      <inertia ixx="2.1599999999999996e-06" ixy="0" ixz="0" iyy="1.5163333333333333e-05" iyz="0" izz="1.5163333333333333e-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0325 0 0" rpy="0 0 0"/>
+      <geometry><box size="0.065 0.018 0.018"/></geometry>
+      <material name="white"><color rgba="0.95 0.95 0.95 1"/></material>
+    </visual>
+    <collision>
+      <origin xyz="0.0325 0 0" rpy="0 0 0"/>
+      <geometry><box size="0.065 0.018 0.018"/></geometry>
+    </collision>
+  </link>
+
+  <joint name="joint_10" type="revolute">
+    <parent link="link_9"/>
+    <child link="link_10"/>
+    <origin xyz="0.065 0 0" rpy="0 0 0"/>
+    <!-- BEND IN VERTICAL PLANE: rotate about Y-axis -->
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.57" upper="1.57" effort="3.0" velocity="6.0"/>
+    <dynamics damping="0.02" friction="0.0"/>
+  </joint>
+
+
+  <link name="link_11">
+    <inertial>
+      <origin xyz="0.0325 0 0" rpy="0 0 0"/>
+      <mass value="0.04"/>
+      <inertia ixx="2.1599999999999996e-06" ixy="0" ixz="0" iyy="1.5163333333333333e-05" iyz="0" izz="1.5163333333333333e-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0325 0 0" rpy="0 0 0"/>
+      <geometry><box size="0.065 0.018 0.018"/></geometry>
+      <material name="white"><color rgba="0.95 0.95 0.95 1"/></material>
+    </visual>
+    <collision>
+      <origin xyz="0.0325 0 0" rpy="0 0 0"/>
+      <geometry><box size="0.065 0.018 0.018"/></geometry>
+    </collision>
+  </link>
+
+  <joint name="joint_11" type="revolute">
+    <parent link="link_10"/>
+    <child link="link_11"/>
+    <origin xyz="0.065 0 0" rpy="0 0 0"/>
+    <!-- BEND IN VERTICAL PLANE: rotate about Y-axis -->
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.57" upper="1.57" effort="3.0" velocity="6.0"/>
+    <dynamics damping="0.02" friction="0.0"/>
+  </joint>
+
+
+  <link name="link_12">
+    <inertial>
+      <origin xyz="0.0325 0 0" rpy="0 0 0"/>
+      <mass value="0.04"/>
+      <inertia ixx="2.1599999999999996e-06" ixy="0" ixz="0" iyy="1.5163333333333333e-05" iyz="0" izz="1.5163333333333333e-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0325 0 0" rpy="0 0 0"/>
+      <geometry><box size="0.065 0.018 0.018"/></geometry>
+      <material name="white"><color rgba="0.95 0.95 0.95 1"/></material>
+    </visual>
+    <collision>
+      <origin xyz="0.0325 0 0" rpy="0 0 0"/>
+      <geometry><box size="0.065 0.018 0.018"/></geometry>
+    </collision>
+  </link>
+
+  <joint name="joint_12" type="revolute">
+    <parent link="link_11"/>
+    <child link="link_12"/>
+    <origin xyz="0.065 0 0" rpy="0 0 0"/>
+    <!-- BEND IN VERTICAL PLANE: rotate about Y-axis -->
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.57" upper="1.57" effort="3.0" velocity="6.0"/>
+    <dynamics damping="0.02" friction="0.0"/>
+  </joint>
+
+
+  <link name="link_13">
+    <inertial>
+      <origin xyz="0.0325 0 0" rpy="0 0 0"/>
+      <mass value="0.04"/>
+      <inertia ixx="2.1599999999999996e-06" ixy="0" ixz="0" iyy="1.5163333333333333e-05" iyz="0" izz="1.5163333333333333e-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0325 0 0" rpy="0 0 0"/>
+      <geometry><box size="0.065 0.018 0.018"/></geometry>
+      <material name="white"><color rgba="0.95 0.95 0.95 1"/></material>
+    </visual>
+    <collision>
+      <origin xyz="0.0325 0 0" rpy="0 0 0"/>
+      <geometry><box size="0.065 0.018 0.018"/></geometry>
+    </collision>
+  </link>
+
+  <joint name="joint_13" type="revolute">
+    <parent link="link_12"/>
+    <child link="link_13"/>
+    <origin xyz="0.065 0 0" rpy="0 0 0"/>
+    <!-- BEND IN VERTICAL PLANE: rotate about Y-axis -->
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.57" upper="1.57" effort="3.0" velocity="6.0"/>
+    <dynamics damping="0.02" friction="0.0"/>
+  </joint>
+
+
+  <link name="link_14">
+    <inertial>
+      <origin xyz="0.0325 0 0" rpy="0 0 0"/>
+      <mass value="0.04"/>
+      <inertia ixx="2.1599999999999996e-06" ixy="0" ixz="0" iyy="1.5163333333333333e-05" iyz="0" izz="1.5163333333333333e-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0325 0 0" rpy="0 0 0"/>
+      <geometry><box size="0.065 0.018 0.018"/></geometry>
+      <material name="white"><color rgba="0.95 0.95 0.95 1"/></material>
+    </visual>
+    <collision>
+      <origin xyz="0.0325 0 0" rpy="0 0 0"/>
+      <geometry><box size="0.065 0.018 0.018"/></geometry>
+    </collision>
+  </link>
+
+  <joint name="joint_14" type="revolute">
+    <parent link="link_13"/>
+    <child link="link_14"/>
+    <origin xyz="0.065 0 0" rpy="0 0 0"/>
+    <!-- BEND IN VERTICAL PLANE: rotate about Y-axis -->
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.57" upper="1.57" effort="3.0" velocity="6.0"/>
+    <dynamics damping="0.02" friction="0.0"/>
+  </joint>
+
+</robot>
