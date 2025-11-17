@@ -5,7 +5,8 @@ A MuJoCo-based simulation of a soft, cable-driven, logarithmic-spiral robotic ar
 🚀 Overview
 
 SpiRobs is a bioinspired soft-robotics simulation framework implementing a logarithmic-spiral cable-driven octoarm capable of reaching, wrapping, and grasping objects.
-Built using MuJoCo, Python, and a custom 3-tendon actuation system, SpiRobs demonstrates how biological principles—like distributed compliance and spiral contraction—can be translated into robotics.
+
+Built using MuJoCo, Python, and a custom 3-tendon actuation system, SpiRobs demonstrates how biological principles—such as distributed compliance and spiral contraction—can be translated into robotics.
 
 This project explores:
 
@@ -23,18 +24,19 @@ Stable object capture using wrapping mechanics
 
 The system is inspired by:
 
-Octopus arms — highly flexible, muscular hydrostat structures
+Octopus arms — highly flexible, muscular-hydrostat structures
 
-Logarithmic spirals in nature — efficient wrapping and surface contact
+Logarithmic spirals in nature — efficient wrapping & continuous surface contact
 
-Cable-driven soft robotics — tendons as antagonistic force generators
+Cable-driven soft robotics — tendons act as antagonistic force generators
 
-Your model uses:
+The model uses:
 
 1 primary curling tendon (F1)
 
 2 antagonistic tendons (F2, F3)
-to produce:
+
+Together, these generate:
 
 Spiral packing
 
@@ -45,15 +47,15 @@ Wrapping around targets
 Stable grasping
 
 ⚙️ Features
-✅ Realistic soft-body segmentation
+✅ Realistic Soft-Body Segmentation
 
-21 jointed mesh-based segments (from STL parts)
+21 jointed mesh-based segments (STL-based)
 
-Ball joints with stiffness–damping gradients
+Natural stiffness–damping gradients
 
 High-resolution tendon routing through 63+ anatomical “sites”
 
-🎛️ Biologically-inspired control states
+🎛️ Biologically-Inspired Control States
 
 Implemented in main.py:
 
@@ -61,35 +63,24 @@ PACKING – Curl into a logarithmic spiral
 
 REACHING – Extend towards the object
 
-WRAPPING – Climb/wrap around the object
+WRAPPING – Climb and wrap around the object
 
-HOLDING – Maintain secure grasp
+HOLDING – Maintain a strong grasp
 
 DONE – Stable final configuration
 
 🎯 Automatic Object Injection
 
-A graspable box is programmatically inserted into the MuJoCo XML each run.
+A graspable box is automatically inserted into the MuJoCo XML at runtime.
 
 🖥️ Live Visualization
 
-Real-time tendon control display
+Real-time tendon control values
 
-Tip position tracking
+Tip (end-effector) position tracking
 
-State-machine overlay in MuJoCo viewer
+Control state overlay directly inside the MuJoCo viewer
 
-
-🔧 Installation & Setup
-1. Install MuJoCo
-pip install mujoco
-
-2. Clone the repository
-git clone https://github.com/your-username/SpiRobs.git
-cd SpiRobs
-
-3. Run the simulation
-python main.py
 
 🎮 How the Control Works
 
@@ -98,30 +89,34 @@ The grasping controller uses time-based tendon interpolation:
 f1_target = get_target_ctrl(t_progress, CTRL_STRAIGHT, CTRL_TIGHT_CURL)
 
 
-F1: pulls to curl
+F1 → primary curling
 
-F2/F3: adjust antagonistic shape
+F2 / F3 → antagonistic shaping
 
-State changes are triggered by elapsed time
+State switching is triggered by elapsed time within each phase
 
-The arm automatically:
+The octoarm automatically:
 
 ✔ curls
+
 ✔ reaches forward
-✔ wraps around object
+
+✔ wraps around the object
+
 ✔ secures a grasp
+
 ✔ maintains stability
 
-🧪 Example Output (Console)
+🧪 Example Console Output
 >> 🤖 Transitioning to state: PACKING
 >> 🤖 Transitioning to state: REACHING
 >> 🤖 Transitioning to state: WRAPPING
 >> 🤖 Transitioning to state: HOLDING
 >> 🤖 Transitioning to state: DONE
 
-📸 Snapshots (recommended to add)
+📸 Snapshots (Recommended to Add)
 
-You can later add screenshots or videos:
+You can include screenshots and GIFs:
 
 /media/demo_grasp.gif
 /media/spirals.png
@@ -129,16 +124,16 @@ You can later add screenshots or videos:
 🧠 Key Algorithms
 ✔ Logarithmic Spiral Grasping
 
-The robot uses:
+The spiral form follows:
 
 r = a * e^(bθ)
 
 
-implemented through tendon shortening.
+Implemented through dynamic tendon shortening.
 
 ✔ Multi-Cable Coordination
 
-Each tendon acts like a biological muscle:
+Tendons behave like biological muscles:
 
 Curling
 
@@ -148,13 +143,13 @@ Shape steering
 
 ✔ Distributed Soft Segmentation
 
-Each of the 21 segments has:
+Each of the 21 soft segments includes:
 
-Mesh geometry
+Mesh geometry (STL)
 
 Ball-joint kinematics
 
-Tendon routing in/out sites
+In/out tendon routing sites
 
 📚 Applications
 
@@ -166,20 +161,20 @@ Continuum-arm control
 
 Multi-tendon actuation learning
 
-Robotics in hazardous environments
+Hazardous-environment robotics
 
 Bioinspired engineering coursework
 
 🛠️ Future Enhancements
 
-Reinforcement learning-based grasping
+Reinforcement learning–based grasping
 
 Physics-informed control
 
 Adaptive spiral generation
 
-Tactile sensing + slip detection
+Tactile sensing & slip detection
 
-Real hardware implementation
+Real soft-robot hardware implementation
 
 ROS2 integration
